@@ -14,7 +14,6 @@ function onMSEInit() {
   buffer = mse.addSourceBuffer('audio/mp4');
   buffer.mode = 'sequence';
   buffer.addEventListener('updateend', onUpdateEnd, false);
-  audio.play();
   onUpdateEnd();
 }
 
