@@ -5,6 +5,11 @@ var buffer;
 mse.addEventListener('sourceopen', onMSEInit, false);
 audio.src = URL.createObjectURL(mse);
 
+audio.addEventListener('canplaythrough', () => {
+  console.log('calling play()');
+  audio.play();
+});
+
 function onMSEInit() {
   buffer = mse.addSourceBuffer('audio/mp4');
   buffer.mode = 'sequence';
