@@ -15,8 +15,7 @@ function onMSEInit() {
 
 var urls = [
   'segments/segment0.m4a',
-  'segments/segment1.m4a',
-  'segments/segment2.m4a'
+  'segments/segment1.m4a'
 ];
 
 function onUpdateEnd() {
