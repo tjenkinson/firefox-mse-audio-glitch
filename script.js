@@ -5,7 +5,12 @@ var buffer;
 mse.addEventListener('sourceopen', onMSEInit, false);
 audio.src = URL.createObjectURL(mse);
 
-audio.addEventListener('canplaythrough', () => {
+audio.addEventListener('loadedmetadata', function listener() {
+  audio.removeEventListener('loadedmetadata', listener);
+  if (window.seekHackEnabled) {
+    console.log('seeking to 50ms');
+    audio.currentTime = 0.05;
+  }
   console.log('calling play()');
   audio.play();
 });
